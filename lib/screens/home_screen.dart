@@ -18,63 +18,55 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+            const SizedBox(height: 20),
+            Center(
               child: CircleAvatar(
-                radius: 60,
-                backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'), 
-              ),
-            ),
-            const SizedBox(height: 16),
-            const Center(
-              child: Text(
-                'José Julián Gómez Salazar',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
-            const Center(
-              child: Text(
-                'Estudiante de Ingeniería de Sistemas',
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
-            ),
-            const Divider(height: 40, thickness: 1.5),
-
-            const Text('¿Qué hago?', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            const Text(
-              'Desarrollo software utilizando lenguajes y frameworks como Java, Flutter, Dart y bases de datos SQL. Además, me dedico al diseño y simulación de circuitos eléctricos y sistemas electrónicos usando software como Proteus.',
-              style: TextStyle(fontSize: 16, height: 1.5),
-            ),
-            const SizedBox(height: 20),
-
-            const Text('Hobbies', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            const Text(
-              'Tengo un fuerte interés técnico en el armado y optimización de hardware de PC, enfocado en componentes como procesadores AMD Ryzen y tarjetas NVIDIA RTX. En mi tiempo libre, participo en videojuegos multijugador y competitivos como Overwatch, World of Warcraft y la serie EA Sports FC.',
-              style: TextStyle(fontSize: 16, height: 1.5),
-            ),
-            const SizedBox(height: 15),
-            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.network('https://cdn-icons-png.flaticon.com/512/2005/2005085.png', width: 60, height: 60),
-                Image.network('https://cdn-icons-png.flaticon.com/512/860/860113.png', width: 60, height: 60),
-              ],
-            ),
-            const Divider(height: 40, thickness: 1.5),
-
-            const Center(
-              child: Text(
-                'Desarrollado en Flutter - 2026',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                radius: 70,
+                // AQUÍ PEGA TU LINK ENTRE LAS COMILLAS
+                backgroundImage: NetworkImage('https://i.postimg.cc/VNTWr8q1/Whats-App-Image-2026-06-25-at-10-14-32-PM.jpg'), 
               ),
             ),
             const SizedBox(height: 20),
+            const Text(
+              'José Julián Gómez Salazar',
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            ),
+            const Text(
+              'Estudiante de Ingeniería de Sistemas',
+              style: TextStyle(fontSize: 18, color: Colors.blueGrey),
+            ),
+            const Divider(height: 40, thickness: 1),
+
+            // SECCIÓN: SOBRE MÍ
+            _buildSectionTitle('Mi Objetivo'),
+            const Text(
+              'Actualmente curso la carrera de Ingeniería de Sistemas con la firme meta de graduarme y convertirme en un profesional capaz de aportar soluciones innovadoras al mundo tecnológico.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, height: 1.5),
+            ),
+            const SizedBox(height: 25),
+
+            // SECCIÓN: HOBBIES
+            _buildSectionTitle('Hobbies & Gaming'),
+            const Text(
+              'Apasionado por el mundo gaming competitivo. Disfruto de la estrategia y el trabajo en equipo en títulos como Overwatch y Dota 2, donde siempre busco mejorar mis habilidades y jugar con mis amigos .',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, height: 1.5),
+            ),
+            const SizedBox(height: 30),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Text(
+        title,
+        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black87),
       ),
     );
   }
