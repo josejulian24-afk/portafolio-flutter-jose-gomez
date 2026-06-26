@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.badge),
             onPressed: () => Navigator.pushNamed(context, '/contact'),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -24,7 +24,9 @@ class HomeScreen extends StatelessWidget {
               child: CircleAvatar(
                 radius: 70,
                 // AQUÍ PEGA TU LINK ENTRE LAS COMILLAS
-                backgroundImage: NetworkImage('https://i.postimg.cc/VNTWr8q1/Whats-App-Image-2026-06-25-at-10-14-32-PM.jpg'), 
+                backgroundImage: NetworkImage(
+                  'https://i.postimg.cc/VNTWr8q1/Whats-App-Image-2026-06-25-at-10-14-32-PM.jpg',
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -54,6 +56,32 @@ class HomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, height: 1.5),
             ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.blueGrey.withOpacity(0.3)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.monitor_heart, color: Colors.green),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Estado: Compilando proyectos y mejorando en Overwatch & Dota 2',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(height: 30),
           ],
         ),
@@ -66,7 +94,11 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black87),
+        style: const TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: Colors.black87,
+        ),
       ),
     );
   }
